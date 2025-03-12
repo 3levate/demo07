@@ -1,0 +1,15 @@
+#hike-container {
+  padding: 25px;
+
+  img {
+    max-width: 600px;
+  }
+}
+
+#review-container {
+  padding: 25px;
+
+  .card {
+    max-width: 350px;
+  }
+}

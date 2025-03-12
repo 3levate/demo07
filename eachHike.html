@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hike</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -25,7 +26,8 @@
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
-    <title>Demo09</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/each-hike.css" />
   </head>
   <body>
     <template id="hikeCardTemplate">
@@ -43,11 +45,51 @@
       </div>
     </template>
 
+    <template id="reviewCardTemplate">
+      <div class="card bg-secondary">
+        <img class="card-img-top" />
+        <div class="card-body bg-light">
+          <h5 class="title">placeholder</h5>
+          <p class="star-rating"></p>
+          <p class="time">placeholder</p>
+          <p class="level">placeholder</p>
+          <p class="season">placeholder</p>
+          <p class="scrambled">placeholder</p>
+          <p class="flooded">placeholder</p>
+          <br />
+          <p class="description">
+            This card has supporting text below as a natural lead-in to additional content.
+          </p>
+        </div>
+      </div>
+    </template>
+
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="container"></div>
+    <div id="hike-container" class="container">
+      <h1><span id="hikeName">this hike</span></h1>
+      <div class="position-relative">
+        <img id="hike-image" class="hike-img responsive" src="" alt="Hike photo" />
+        <button
+          class="btn btn-primary position-absolute bottom-0 end-600 m-3"
+          onclick="saveHikeDocumentIDAndRedirect()">
+          Write Review
+        </button>
+      </div>
+    </div>
 
-    <nav id="footerPlaceholder"></nav>
+    <div id="review-container" class="container">
+      <h2>Reviews:</h2>
+      <div id="details-go-here"></div>
+      <!-- Here is the container for cards with horizontal scrolling -->
+      <div class="card-container">
+        <div id="reviewCardGroup" class="row row-cols-auto">
+          <!-- Add your card templates here -->
+        </div>
+      </div>
+    </div>
+
+    <footer id="footerPlaceholder"></footer>
 
     <script src="./scripts/firebaseAPI_TEAM99.js"></script>
     <script src="./scripts/skeleton.js"></script>
